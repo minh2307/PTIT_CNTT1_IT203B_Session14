@@ -1,9 +1,14 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.example'
 version = '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'com.example.flashsale.main.Main'
+}
 
 repositories {
     mavenCentral()
@@ -18,4 +23,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+// UTF-8 Encoding for Vietnamese comments
+compileJava {
+    options.encoding = 'UTF-8'
 }
