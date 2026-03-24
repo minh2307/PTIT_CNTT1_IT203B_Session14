@@ -1,34 +1,81 @@
 package com.example.flashsale.entity;
 
+import java.math.BigDecimal;
+
 public class OrderDetail {
-    private int id;
+    private int detailId;
     private int orderId;
     private int productId;
     private int quantity;
-    private double price;
+    private BigDecimal unitPrice;
 
-    public OrderDetail() {}
+    public OrderDetail() {
+    }
 
-    public OrderDetail(int id, int orderId, int productId, int quantity, double price) {
-        this.id = id;
+    public OrderDetail(int orderId, int productId, int quantity, BigDecimal unitPrice) {
         this.orderId = orderId;
         this.productId = productId;
         this.quantity = quantity;
-        this.price = price;
+        this.unitPrice = unitPrice;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public OrderDetail(int detailId, int orderId, int productId, int quantity, BigDecimal unitPrice) {
+        this.detailId = detailId;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
+    }
 
-    public int getOrderId() { return orderId; }
-    public void setOrderId(int orderId) { this.orderId = orderId; }
+    // Getters & Setters
+    public int getDetailId() {
+        return detailId;
+    }
 
-    public int getProductId() { return productId; }
-    public void setProductId(int productId) { this.productId = productId; }
+    public void setDetailId(int detailId) {
+        this.detailId = detailId;
+    }
 
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public int getOrderId() {
+        return orderId;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderDetail{" +
+                "detailId=" + detailId +
+                ", orderId=" + orderId +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                ", unitPrice=" + unitPrice +
+                '}';
+    }
 }

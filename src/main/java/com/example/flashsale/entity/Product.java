@@ -1,34 +1,81 @@
 package com.example.flashsale.entity;
 
+import java.math.BigDecimal;
+
 public class Product {
-    private int id;
+    private int productId;
     private String name;
-    private double price;
-    private int stock;
-    private int categoryId;
+    private String category;
+    private BigDecimal price;
+    private int stockQuantity;
 
-    public Product() {}
-
-    public Product(int id, String name, double price, int stock, int categoryId) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.categoryId = categoryId;
+    public Product() {
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Product(String name, String category, BigDecimal price, int stockQuantity) {
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public Product(int productId, String name, String category, BigDecimal price, int stockQuantity) {
+        this.productId = productId;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.stockQuantity = stockQuantity;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    // Getters & Setters
+    public int getProductId() {
+        return productId;
+    }
 
-    public int getStock() { return stock; }
-    public void setStock(int stock) { this.stock = stock; }
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
 
-    public int getCategoryId() { return categoryId; }
-    public void setCategoryId(int categoryId) { this.categoryId = categoryId; }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productId=" + productId +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", price=" + price +
+                ", stockQuantity=" + stockQuantity +
+                '}';
+    }
 }
